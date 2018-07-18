@@ -19,3 +19,4 @@ Route::get('delete/{id}', 'RentalController@delete')->name('delete');
 Route::get('edit/{id}', 'RentalController@edit')->name('edit');
 Route::post('edit/{id}', 'RentalController@submitedit')->name('submitedit');
 Route::get('search', 'RentalController@search')->name('search');
+Route::get('print', 'RentalController@print')->name('print');

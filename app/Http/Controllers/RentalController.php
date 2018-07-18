@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rental;
+use PDF;
 
 class RentalController extends Controller
 {
@@ -73,6 +74,7 @@ class RentalController extends Controller
   		return redirect(Route('dashboard'))->with('alert-success','Berhasil Merubah Data!');
   	}
 
+    //Pencarian
     public function search(Request $request){
   		$search = $request->get('search');
       $result = Rental::where('member_id', 'LIKE', '%'.$search.'%')
@@ -86,4 +88,11 @@ class RentalController extends Controller
                     ->paginate(10);
   		return view('Data.result', compact('search', 'result'));
   	}
+
+    //Cetak Data
+    public function print(){
+      $rental = Rental::all();
+      $pdf=PDF::loadView('Data.print', ['rental' => $rental]);
+      return $pdf->setPaper('a3', 'landscape')->stream();
+    }
   }

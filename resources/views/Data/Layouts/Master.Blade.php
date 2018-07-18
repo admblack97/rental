@@ -8,6 +8,19 @@
     <title>Latihan Laravel</title>
     <link href="/Public-User/css/bootstrap.min.css" rel="stylesheet">
   </head>
+  <style>
+
+    td, th {
+        border: 1px solid;
+        text-align: center;
+    }
+
+    tr:nth-child(even)
+    {
+      background-color: #d6d3d3;
+    }
+
+  </style>
   <body>
     <!-- Awal Navigasi  -->
     <nav class="navbar navbar-inverse">
@@ -26,6 +39,9 @@
       </ul>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{ Route('create') }}">Tambah Data</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ Route('print') }}">Cetak</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ Route('index') }}"><span class="glyphicon glyphicon-log-in"></span> Keluar</a></li>
