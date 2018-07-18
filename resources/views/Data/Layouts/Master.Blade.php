@@ -22,11 +22,27 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ Route('dashboard') }}">Data Rental</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
         <li class="active"><a href="{{ Route('create') }}">Tambah Data</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ Route('index') }}"><span class="glyphicon glyphicon-log-in"></span> Keluar</a></li>
       </ul>
+      <form class="" action="{{ Route('search') }}" method="get">
+        <div class="col-md-3" style="Float: right; margin-top: 7px;">
+          <div class="input-group custom-search-form">
+            <input type="text" class="form-control" name="search" placeholder="Search...">
+              <span class="input-group-btn">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>Cari</button>
+                </span>
+              </span>
+          </div>
+        </div>
+      </form>
+
     </div>
   </div>
 </nav>

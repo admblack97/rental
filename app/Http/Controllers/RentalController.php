@@ -12,6 +12,15 @@ class RentalController extends Controller
       return view ('index');
     }
 
+    // public function search(Request $request){
+    //   if ($request->get('search')) {
+    //     $rentals = Rental::where('nama', 'LIKE', '%'.$request->get('search').'%')->get();
+    //   }else {
+    //     $rentals = Rental::all();
+    //   }
+  	// 	return view('Data.search', ['rental' => $rentals]);
+  	// }
+
     public function dashboard(){
   		$rentals = Rental::all();
   		return view('Data.dashboard', ['rental' => $rentals]);
@@ -62,5 +71,19 @@ class RentalController extends Controller
       $rental->save();
 
   		return redirect(Route('dashboard'))->with('alert-success','Berhasil Merubah Data!');
+  	}
+
+    public function search(Request $request){
+  		$search = $request->get('search');
+      $result = Rental::where('member_id', 'LIKE', '%'.$search.'%')
+                    ->orwhere('nama', 'LIKE', '%'.$search.'%')
+                    ->orwhere('alamat', 'LIKE', '%'.$search.'%')
+                    ->orwhere('no_hp', 'LIKE', '%'.$search.'%')
+                    ->orwhere('judul_dvd', 'LIKE', '%'.$search.'%')
+                    ->orwhere('tanggal_pinjam', 'LIKE', '%'.$search.'%')
+                    ->orwhere('tanggal_kembali', 'LIKE', '%'.$search.'%')
+                    ->orwhere('biaya', 'LIKE', '%'.$search.'%')
+                    ->paginate(10);
+  		return view('Data.result', compact('search', 'result'));
   	}
   }
