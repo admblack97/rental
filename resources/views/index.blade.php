@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Grayscale - Start Bootstrap Theme</title>
-
+    <title>UAS PEMROGRAMAN WEB 2</title>
     <!-- Bootstrap core CSS -->
     <link href="/Public-Depan/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,7 +26,7 @@
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">RENTAL DVD</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">UAS Pemrograman Web 2</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">UAS PEMROGRAMAN WEB 2</h2>
           <a href="{{ Route ('dashboard')}}" class="btn btn-primary js-scroll-trigger">Masuk</a>
         </div>
       </div>
